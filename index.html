@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#06142f"><meta name="description" content="Маленькое волшебное послание для Тахмины.">
+<title>Для тебя, Тахмина ❤️</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Manrope:wght@300;400;500;600;700&display=swap');
+:root{--ice:#c9edff;--gold:#f5d58b}*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;min-height:100svh;color:#f3f8ff;background:radial-gradient(ellipse at 50% 15%,#123d70 0,#0a2448 32%,#06142d 66%,#020817 100%);font-family:Manrope,system-ui,sans-serif;overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.22;background-image:radial-gradient(#c5eaff 1px,transparent 1.5px),radial-gradient(#7dbfff 1px,transparent 1.5px);background-size:83px 83px,127px 127px;background-position:0 0,37px 51px;animation:sky 45s linear infinite}
+@keyframes sky{to{background-position:400px 500px,-300px 350px}}
+#sky,#hearts{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:0}.star{position:absolute;width:2px;height:2px;border-radius:50%;background:#e7f7ff;box-shadow:0 0 8px 2px #8bd5ff;animation:twinkle 2.8s ease-in-out infinite alternate}
+@keyframes twinkle{to{opacity:.18;transform:scale(.55)}}.heart{position:absolute;bottom:-35px;color:#8bcfff;text-shadow:0 0 14px #5bbaff;animation:rise linear forwards;opacity:0}
+@keyframes rise{10%{opacity:.8}90%{opacity:.65}100%{transform:translateY(-115vh) rotate(35deg);opacity:0}}
+main{position:relative;z-index:1;min-height:100svh;display:grid;place-items:center;padding:30px 18px}.screen{width:min(760px,100%);text-align:center;display:none;animation:enter .9s cubic-bezier(.2,.75,.2,1) both}.screen.active{display:block}
+@keyframes enter{from{opacity:0;transform:translateY(22px) scale(.985);filter:blur(5px)}to{opacity:1;transform:none;filter:blur(0)}}
+.eyebrow{font-size:.7rem;letter-spacing:.34em;text-transform:uppercase;color:#9acdf2;margin-bottom:22px}h1,h2,.letter-title{font-family:"Cormorant Garamond",Georgia,serif;font-weight:500}
+h1{font-size:clamp(3rem,9vw,6.5rem);line-height:.98;margin:0 0 22px;text-shadow:0 0 35px #69bfff55}h2{font-size:clamp(2.5rem,7vw,4.8rem);line-height:1.02;margin:0 0 18px}p{color:#c7d9ec;font-size:clamp(.98rem,2.5vw,1.12rem);line-height:1.9}.glow{color:var(--ice);text-shadow:0 0 22px #65c5ff88}
+.btn{touch-action:manipulation;-webkit-tap-highlight-color:transparent;border:1px solid #9bd8ff88;background:linear-gradient(135deg,#1c5b91,#10335f 60%,#0b2348);color:#f5fbff;padding:15px 27px;border-radius:999px;font:600 .92rem Manrope,sans-serif;cursor:pointer;box-shadow:0 8px 35px #1686d633,inset 0 1px #ffffff22;transition:.3s;margin:12px 6px}.btn:hover{transform:translateY(-3px);box-shadow:0 12px 40px #1686d666;border-color:#c5edff}
+.btn:focus-visible,.dove:focus-visible,.rose-wrap:focus-visible{outline:3px solid #d8f3ff;outline-offset:5px}.lang{touch-action:manipulation;position:fixed;z-index:4;right:16px;top:16px;border:1px solid #8ccfff55;background:#071a36;color:#d9f2ff;border-radius:20px;padding:8px 12px;cursor:pointer;font:600 .75rem Manrope}
+.moon{width:112px;height:112px;border-radius:50%;margin:0 auto 30px;background:radial-gradient(circle at 35% 32%,#fff 0,#d4f0ff 13%,#8dcfff 40%,#4b8fc5 70%,#1a4777 100%);box-shadow:0 0 35px #7acbff88,0 0 100px #3089cf55;position:relative}.moon:after{content:"";position:absolute;width:102px;height:102px;left:32px;top:-8px;border-radius:50%;background:#0b2a50}
+.halo{width:210px;height:210px;border:1px solid #8dd5ff55;border-radius:50%;margin:0 auto 20px;display:grid;place-items:center;box-shadow:0 0 55px #2e8bc833;animation:pulse 4s ease-in-out infinite}@keyframes pulse{50%{box-shadow:0 0 85px #2eabff66;transform:scale(1.025)}}
+.dove{border:0;background:transparent;padding:0;touch-action:manipulation;font-size:6rem;display:inline-block;cursor:pointer;filter:drop-shadow(0 0 20px #b9e7ff88);animation:fly 4s ease-in-out infinite}@keyframes fly{0%,100%{transform:translate(0,0) rotate(-4deg)}50%{transform:translate(12px,-13px) rotate(4deg)}}
+.hint{font-size:.82rem;color:#8fb5d8;letter-spacing:.08em}.message{max-width:570px;margin:25px auto 0;padding:22px 25px;border:1px solid #8fcfff44;border-radius:22px;background:#061a36;box-shadow:0 15px 60px #0005;display:none;animation:enter .7s both}.message.show{display:block}
+.rose-wrap{touch-action:manipulation;width:230px;height:250px;margin:0 auto 5px;cursor:pointer;position:relative;display:grid;place-items:center}.rose{font-size:8rem;filter:drop-shadow(0 0 20px #ff647866);transform:scale(.78);transition:transform 1.2s cubic-bezier(.2,.8,.2,1);display:block}.rose-wrap.bloom .rose{transform:scale(1.2) rotate(-5deg)}
+.ring{font-size:4.2rem;opacity:0;transform:translateY(25px) scale(.3);display:block;height:0;transition:all 1s ease .6s;filter:drop-shadow(0 0 18px #f8d77e)}.ring.show{height:85px;opacity:1;transform:translateY(0) scale(1)}
+.letter-card{max-width:680px;margin:0 auto;text-align:left;padding:clamp(23px,5vw,45px);border:1px solid #8bcfff55;border-radius:26px;background:linear-gradient(145deg,#0a2549ed,#06152ded);box-shadow:0 25px 90px #0007,0 0 55px #2b9ce522;position:relative;overflow:hidden}.letter-card:before{content:"✧";position:absolute;right:22px;top:10px;color:#9bdcff66;font-size:4rem}
+.letter-title{text-align:center;font-size:clamp(2.4rem,7vw,4rem);margin:0 0 20px;color:#d9f2ff}.letter{font-family:"Cormorant Garamond",Georgia,serif;font-size:clamp(1.2rem,3.4vw,1.55rem);line-height:1.65;color:#e0ebf7;white-space:pre-line}.signature{font-family:"Cormorant Garamond",Georgia,serif;font-size:1.8rem;color:var(--gold);text-align:right;margin-top:25px}.footer{margin-top:24px;color:#7898ba;font-size:.72rem;letter-spacing:.12em}
+@media(max-width:480px){main{padding:70px 17px 35px}.lang{top:12px;right:12px}.letter-card{border-radius:20px}.btn{padding:14px 21px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}}
+</style></head>
+<body><div id="sky" aria-hidden="true"></div><div id="hearts" aria-hidden="true"></div>
+<button class="lang" id="lang" type="button">РУС / TJ</button><main>
+<section class="screen active" id="s1"><div class="moon"></div><div class="eyebrow" data-ru="маленькое послание под большим небом" data-tj="паёми кӯчак зери осмони беканор">маленькое послание под большим небом</div><h1><span data-ru="Для тебя," data-tj="Барои ту,">Для тебя,</span><br><span class="glow">Тахмина ❤️</span></h1><p data-ru="Я приготовил для тебя кое-что особенное…" data-tj="Ман барои ту як чизи махсус омода кардам…">Я приготовил для тебя кое-что особенное…</p><button class="btn" data-next="2" data-ru="Открыть сюрприз ✨" data-tj="Сюрпризро кушо ✨">Открыть сюрприз ✨</button><div class="footer">ONE LITTLE UNIVERSE · JUST FOR YOU</div></section>
+<section class="screen" id="s2"><div class="eyebrow" data-ru="сначала — одно маленькое желание" data-tj="аввал — як хоҳиши хурд">сначала — одно маленькое желание</div><div class="halo"><div style="font-size:5rem">♡</div></div><h2 data-ru="Улыбнись для меня" data-tj="Барои ман табассум кун">Улыбнись для меня</h2><p data-ru="Пусть эта улыбка будет такой же светлой, как звёзды над нами." data-tj="Бигзор ин табассум мисли ситораҳои болои сарамон равшан бошад.">Пусть эта улыбка будет такой же светлой, как звёзды над нами.</p><div style="font-size:2rem;letter-spacing:.45em;margin:20px 0">💙 💫 💙</div><button class="btn" data-next="3" data-ru="Дальше, моя радость →" data-tj="Ба пеш, шодии ман →">Дальше, моя радость →</button></section>
+<section class="screen" id="s3"><div class="eyebrow" data-ru="у меня есть послание для тебя" data-tj="бароят паёме дорам">у меня есть послание для тебя</div><h2 data-ru="Пусть его принесёт голубь" data-tj="Бигзор кабӯтар онро биёрад">Пусть его принесёт голубь</h2><div class="halo"><button class="dove" id="dove" type="button" aria-label="Открыть послание">🕊️</button></div><div class="hint" data-ru="Нажми на голубя, чтобы прочитать послание" data-tj="Барои хондани паём ба кабӯтар пахш кун">Нажми на голубя, чтобы прочитать послание</div><div class="message" id="doveMessage"><p data-ru="Если бы у каждого доброго чувства были крылья, моё уже летело бы к тебе. Даже когда между нами расстояние, ты остаёшься в моих мыслях и в самых тёплых пожеланиях. 🤍" data-tj="Агар ҳар эҳсоси нек бол медошт, эҳсоси ман аллакай ба сӯи ту парвоз мекард. Ҳатто вақте байни мо масофа ҳаст, ту дар фикрҳо ва орзуҳои неки ман мемонӣ. 🤍">Если бы у каждого доброго чувства были крылья, моё уже летело бы к тебе. Даже когда между нами расстояние, ты остаёшься в моих мыслях и в самых тёплых пожеланиях. 🤍</p></div><button class="btn" data-next="4" data-ru="У меня есть ещё кое-что 🌹" data-tj="Боз як чизи дигар дорам 🌹">У меня есть ещё кое-что 🌹</button></section>
+<section class="screen" id="s4"><div class="eyebrow" data-ru="цветок, который расцветает от одного прикосновения" data-tj="гуле, ки бо як ламс мешукуфад">цветок, который расцветает от одного прикосновения</div><h2 data-ru="Для самой нежной улыбки" data-tj="Барои ширинтарин табассум">Для самой нежной улыбки</h2><div class="rose-wrap" id="rose" role="button" tabindex="0" aria-label="Раскрыть розу"><span class="rose">🌹</span></div><div class="hint" data-ru="Коснись розы — пусть она расцветёт" data-tj="Ба гул ламс кун — бигзор бишукуфад">Коснись розы — пусть она расцветёт</div><div class="ring" id="ring">💍</div><p id="ringText" style="display:none" data-ru="Пусть впереди нас ждёт много красивых мгновений." data-tj="Бигзор дар пеш моро лаҳзаҳои зебои зиёде интизор бошанд.">Пусть впереди нас ждёт много красивых мгновений.</p><button class="btn" data-next="5" data-ru="Прочитать моё письмо 💌" data-tj="Номаи маро бихон 💌">Прочитать моё письмо 💌</button></section>
+<section class="screen" id="s5"><div class="eyebrow" data-ru="несколько слов от самого сердца" data-tj="чанд сухан аз таҳти дил">несколько слов от самого сердца</div><article class="letter-card"><h2 class="letter-title" data-ru="Тахмина, ❤️" data-tj="Тахмина, ❤️">Тахмина, ❤️</h2><div class="letter" id="letter"></div><div class="signature" data-ru="С теплом и нежностью, Файзали" data-tj="Бо меҳру самимият, Файзалӣ">С теплом и нежностью, Файзали</div></article><button class="btn" id="again" data-ru="Начать это волшебство снова ↺" data-tj="Ин сеҳрро аз нав оғоз кун ↺">Начать это волшебство снова ↺</button><div class="footer">MADE WITH LOVE · FOR TAHMINA</div></section>
+</main>
+<script>
+(function(){
+'use strict';
+function init(){
+const $=s=>document.querySelector(s), screens=[...document.querySelectorAll('.screen')];
+let lang='ru',timer=null;
+const letters={
+ru:`Я не знаю, какими словами можно описать всё хорошее, что ты приносишь в мои дни. Но я хочу, чтобы ты знала: ты для меня очень дорога.
+
+Мне нравится думать о твоей улыбке, вспоминать наши разговоры и представлять, сколько ещё тёплых моментов ждёт впереди. Иногда нас разделяют километры, но добрые чувства не измеряются расстоянием.
+
+Я желаю тебе спокойствия в душе, здоровья, радости и исполнения самых светлых мечтаний. Пусть Всевышний оберегает тебя, помогает во всём хорошем и дарит много поводов улыбаться.
+
+Спасибо тебе за твою доброту, заботу и за то, что ты есть. Я хочу беречь наше доверие, относиться к тебе с уважением и каждый день подтверждать свои слова поступками.
+
+Это маленькое ночное небо — всего лишь способ сказать тебе большое и искреннее: ты занимаешь особенное место в моём сердце. ❤️`,
+tj:`Ман намедонам бо кадом сухан метавон тамоми некиееро, ки ту ба рӯзҳои ман меорӣ, баён кард. Аммо мехоҳам бидонӣ: ту барои ман бисёр азиз ҳастӣ.
+
+Ба ёд овардани табассуми ту, суҳбатҳоямон ва фикр кардан дар бораи лаҳзаҳои гарме, ки моро интизоранд, ба ман хуш аст. Баъзан моро километрҳо ҷудо мекунанд, аммо эҳсосҳои нек бо масофа чен намешаванд.
+
+Ба ту оромии дил, саломатӣ, шодӣ ва амалӣ шудани орзуҳои некро мехоҳам. Бигзор Худованд туро ҳифз кунад, дар корҳои нек ёриат диҳад ва сабабҳои зиёде барои табассум насибат гардонад.
+
+Барои меҳрубонӣ, ғамхорӣ ва барои он ки ҳастӣ, ташаккур. Мехоҳам боварии байни моро эҳтиёт кунам, бо эҳтиром муносибат намоям ва ҳар рӯз суханонамро бо рафторам исбот кунам.
+
+Ин осмони хурди шабона танҳо роҳи гуфтани як сухани бузург ва самимист: ту дар қалби ман ҷойгоҳи махсус дорӣ. ❤️`};
+function go(n){screens.forEach(s=>s.classList.toggle('active',s.id==='s'+n));window.scrollTo({top:0,behavior:'smooth'});if(n===5)typeLetter();}
+function typeLetter(){const el=$('#letter');if(!el||el.dataset.done==='1')return;if(timer)clearInterval(timer);el.dataset.done='1';const value=letters[lang];if(matchMedia('(prefers-reduced-motion: reduce)').matches){el.textContent=value;return;}let i=0;timer=setInterval(()=>{el.textContent=value.slice(0,i+=4);if(i>=value.length){clearInterval(timer);timer=null;}},17);}
+function bloom(){$('#rose')?.classList.add('bloom');$('#ring')?.classList.add('show');const p=$('#ringText');if(p)p.style.display='block';}
+function setLang(){lang=lang==='ru'?'tj':'ru';document.documentElement.lang=lang;document.querySelectorAll('[data-ru][data-tj]').forEach(e=>e.textContent=e.dataset[lang]);$('#lang').textContent=lang==='ru'?'РУС / TJ':'TJ / РУС';if($('#letter').dataset.done==='1')$('#letter').textContent=letters[lang];}
+function reset(){if(timer)clearInterval(timer);timer=null;go(1);$('#doveMessage').classList.remove('show');$('#rose').classList.remove('bloom');$('#ring').classList.remove('show');$('#ringText').style.display='none';$('#letter').dataset.done='';$('#letter').textContent='';}
+document.addEventListener('click',e=>{const t=e.target;if(!(t instanceof Element))return;const next=t.closest('[data-next]');if(next){e.preventDefault();go(Number(next.dataset.next));return;}if(t.closest('#dove')){$('#doveMessage').classList.add('show');return;}if(t.closest('#rose')){bloom();return;}if(t.closest('#lang')){setLang();return;}if(t.closest('#again'))reset();});
+$('#rose').addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();bloom();}});
+const sky=$('#sky');for(let i=0;i<75;i++){const s=document.createElement('i');s.className='star';s.style.left=Math.random()*100+'%';s.style.top=Math.random()*100+'%';s.style.animationDelay=Math.random()*4+'s';s.style.opacity=.25+Math.random()*.7;sky.appendChild(s);}
+const layer=$('#hearts');setInterval(()=>{const h=document.createElement('span');h.className='heart';h.textContent=['♡','♥','✧'][Math.floor(Math.random()*3)];h.style.left=Math.random()*100+'%';h.style.fontSize=12+Math.random()*19+'px';h.style.animationDuration=8+Math.random()*8+'s';layer.appendChild(h);setTimeout(()=>h.remove(),17000);},900);
+}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init,{once:true});else init();
+})();
+</script></body></html>
